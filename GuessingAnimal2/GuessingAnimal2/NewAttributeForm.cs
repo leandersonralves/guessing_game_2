@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace GuessingAnimal2
 {
-    public partial class QuestionNewAnimal : Form
+    public partial class NewAttributeForm : Form
     {
-        public QuestionNewAnimal()
+        public string NewAnimalAttribute { get { return textBoxNewAttribute.Text; } }
+
+        public NewAttributeForm()
         {
             InitializeComponent();
         }
 
-        private void yes_Click(object sender, EventArgs e)
+        private void ok_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

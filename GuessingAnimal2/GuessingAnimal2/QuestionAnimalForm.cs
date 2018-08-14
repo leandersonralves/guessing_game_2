@@ -12,9 +12,31 @@ namespace GuessingAnimal2
 {
     public partial class QuestionAnimalForm : Form
     {
+        private const string LABEL_FORMAT = "O animal é um {0}?";
+
         public QuestionAnimalForm()
         {
             InitializeComponent();
+        }
+
+        public void SetAnimalName(string animalName)
+        {
+            labelQuestion.Text = string.Format(LABEL_FORMAT, animalName);
+        }
+
+        private void yes_Click(object sender, EventArgs e)
+        {
+            Singleton.GameMechanics.Restart();
+            var winForm = new WinForm();
+            winForm.Show();
+            Close();
+        }
+
+        private void no_Click(object sender, EventArgs e)
+        {
+            var newAnimalForm = new NewAnimalForm();
+            newAnimalForm.Show();
+            Close();
         }
     }
 }

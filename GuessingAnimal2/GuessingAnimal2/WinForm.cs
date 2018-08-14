@@ -16,5 +16,12 @@ namespace GuessingAnimal2
         {
             InitializeComponent();
         }
+
+        private void ok_Click(object sender, EventArgs e)
+        {
+            var mainMenu = new MainMenuForm();
+            mainMenu.Show();
+            Close();
+        }
     }
 }

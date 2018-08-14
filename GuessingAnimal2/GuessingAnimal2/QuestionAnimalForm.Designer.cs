@@ -52,6 +52,7 @@
             this.yes.TabIndex = 0;
             this.yes.Text = "Sim";
             this.yes.UseVisualStyleBackColor = true;
+            this.yes.Click += new System.EventHandler(this.yes_Click);
             // 
             // no
             // 
@@ -62,6 +63,7 @@
             this.no.TabIndex = 1;
             this.no.Text = "Não";
             this.no.UseVisualStyleBackColor = true;
+            this.no.Click += new System.EventHandler(this.no_Click);
             // 
             // QuestionAnimalForm
             // 
@@ -73,6 +75,7 @@
             this.Controls.Add(this.labelQuestion);
             this.Name = "QuestionAnimalForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guessing Animal 2";
             this.ResumeLayout(false);
 

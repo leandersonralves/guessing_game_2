@@ -19,7 +19,9 @@ namespace GuessingAnimal2
 
         private void ok_Click(object sender, EventArgs e)
         {
-            //Prosseguir com o Jogo
+            QuestionAnimalForm questionAnimalForm = new QuestionAnimalForm();
+            questionAnimalForm.Show();
+            Hide();
         }
 
         private void cancel_Click(object sender, EventArgs e)

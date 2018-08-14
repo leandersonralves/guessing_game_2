@@ -14,6 +14,7 @@ namespace GuessingAnimal2
         [STAThread]
         static void Main()
         {
+            Singleton.GameMechanics.Restart();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenuForm());

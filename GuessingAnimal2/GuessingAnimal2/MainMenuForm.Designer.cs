@@ -67,7 +67,7 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
-            // GuessingGame2
+            // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -78,7 +78,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(570, 150);
             this.MinimumSize = new System.Drawing.Size(570, 150);
-            this.Name = "GuessingGame2";
+            this.Name = "MainMenuForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guessing Animal 2";

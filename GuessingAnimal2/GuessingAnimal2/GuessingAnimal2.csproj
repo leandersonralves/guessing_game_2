@@ -45,11 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTree.cs" />
+    <Compile Include="GameMechanics.cs" />
     <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAttributeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAttributeForm.Designer.cs">
+      <DependentUpon>NewAttributeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,12 +73,13 @@
     <Compile Include="QuestionAttributeForm.Designer.cs">
       <DependentUpon>QuestionAttributeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuestionNewAnimal.cs">
+    <Compile Include="NewAnimalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuestionNewAnimal.Designer.cs">
-      <DependentUpon>QuestionNewAnimal.cs</DependentUpon>
+    <Compile Include="NewAnimalForm.Designer.cs">
+      <DependentUpon>NewAnimalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Singleton.cs" />
     <Compile Include="WinForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAttributeForm.resx">
+      <DependentUpon>NewAttributeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,8 +107,8 @@
     <EmbeddedResource Include="QuestionAttributeForm.resx">
       <DependentUpon>QuestionAttributeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuestionNewAnimal.resx">
-      <DependentUpon>QuestionNewAnimal.cs</DependentUpon>
+    <EmbeddedResource Include="NewAnimalForm.resx">
+      <DependentUpon>NewAnimalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm.resx">
       <DependentUpon>WinForm.cs</DependentUpon>

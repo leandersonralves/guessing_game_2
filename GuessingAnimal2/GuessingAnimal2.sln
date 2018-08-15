@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessingAnimal2", "GuessingAnimal2\GuessingAnimal2.csproj", "{5D28088E-BBAA-4786-9DA4-78E3245B282A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_GuessingAnimal2", "UnitTest_GuessingAnimal2\UnitTest_GuessingAnimal2.csproj", "{4D2C408F-3235-4B0E-B9EF-8EAC49110896}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5D28088E-BBAA-4786-9DA4-78E3245B282A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D28088E-BBAA-4786-9DA4-78E3245B282A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D28088E-BBAA-4786-9DA4-78E3245B282A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D2C408F-3235-4B0E-B9EF-8EAC49110896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D2C408F-3235-4B0E-B9EF-8EAC49110896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D2C408F-3235-4B0E-B9EF-8EAC49110896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D2C408F-3235-4B0E-B9EF-8EAC49110896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

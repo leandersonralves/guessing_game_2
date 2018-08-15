@@ -76,7 +76,6 @@
             this.Controls.Add(this.yes);
             this.Name = "QuestionAttributeForm";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guessing Animal 2";
             this.ResumeLayout(false);

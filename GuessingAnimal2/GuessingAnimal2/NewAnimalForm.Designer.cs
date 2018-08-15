@@ -73,7 +73,6 @@
             this.Controls.Add(this.label);
             this.Name = "NewAnimalForm";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guessing Animal 2";
             this.ResumeLayout(false);

@@ -1,74 +1,106 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Generic.Tree.Binary;
 
 namespace GuessingAnimal2
 {
+    /// <summary>
+    /// Classe da mecânica do jogo.
+    /// </summary>
     public class GameMechanics
     {
-        private interface IData
+        /// <summary>
+        /// Classe que representa uma característica do animal.
+        /// </summary>
+        private class Attribute : Node<string>
         {
-            string content { get; }
-        }
-
-        private class Question : IData
-        {
-            public string content { get; private set; }
-            public Question (string content)
+            public Attribute(string value) : base(value)
             {
-                this.content = content;
+                this.Value = value;
             }
         }
 
-        private class Animal : IData
+        /// <summary>
+        /// Classe que representa o animal.
+        /// </summary>
+        private class Animal : Node<string>
         {
-            public string content { get; private set; }
-            public Animal (string name)
+            public Animal(string value) : base(value)
             {
-                content = name;
+                this.Value = value;
             }
         }
 
-        private BinaryTree<IData> data;
+        /// <summary>
+        /// Arvore binária das características, onde uma leaf é um animal.
+        /// </summary>
+        private Tree<Node<string>, string> treeData;
 
         public GameMechanics()
         {
-            data = new BinaryTree<IData>(
-                new NodeTree<IData>(
-                    new Question("late")
-                    ));
+            var nodeRoot = new Attribute("lives in water");
+            nodeRoot.Left = new Animal("shark");
+            nodeRoot.Right = new Animal("monkey");
 
-            data.AddLeft(new NodeTree<IData>(new Animal("Cachorro")));
+            treeData = new Tree<Node<string>, string>(nodeRoot);
         }
 
+        /// <summary>
+        /// Redefine a seleção para o root.
+        /// </summary>
         public void Restart()
         {
-            data.CurrentSelected = data.Root;
+            treeData.ResetSelect();
         }
 
+        /// <summary>
+        /// Adiciona um animal entre o atual selecionado, e o nó pai desse.
+        /// </summary>
+        /// <param name="animal">Nome do animal</param>
+        /// <param name="attribute">Característica</param>
         public void AddNewAnimal (string animal, string attribute)
         {
-            var newNode = new NodeTree<IData>(new Question(attribute));
-            newNode.Left = new NodeTree<IData>(new Question(animal));
-            newNode.Right = data.CurrentSelected.Left;
-            data.CurrentSelected.Left = newNode;
+            var newNode = new Attribute(attribute);
+            newNode.Left = new Animal(animal);
+            if (treeData.CurrentSelected.Root.Left == treeData.CurrentSelected)
+            {
+                treeData.CurrentSelected.Root.Left = newNode;
+            }
+            else if (treeData.CurrentSelected.Root.Right == treeData.CurrentSelected)
+            {
+                treeData.CurrentSelected.Root.Right = newNode;
+            }
+            newNode.Root = treeData.CurrentSelected.Root;
+            newNode.Right = treeData.CurrentSelected;
         }
 
+        /// <summary>
+        /// Seleciona o Nó do lado esquerdo. Seleção do Yes.
+        /// </summary>
         public void SelectYes ()
         {
-            data.SelectLeft();
+            treeData.SelectLeft();
         }
 
 
+        /// <summary>
+        /// Seleciona o Nó do lado direito. Seleção do No.
+        /// </summary>
         public void SelectNo()
         {
-            data.SelectRight();
+            treeData.SelectRight();
         }
 
-        public bool IsAnimal { get { return data.CurrentSelected is Animal; } }
+        /// <summary>
+        /// Checa se o nó selecionado atual é de um animal.
+        /// </summary>
+        public bool IsAnimal { get { return treeData.CurrentSelected is Animal; } }
 
-        public string GetData
+        /// <summary>
+        /// Retorna o valor do atual Nó, que pode ser um animal ou atributo.
+        /// </summary>
+        public string GetValue
         {
             get{
-                return (data.CurrentSelected as IData).content;
+                return treeData.CurrentSelected.Value;
             }
         }
     }

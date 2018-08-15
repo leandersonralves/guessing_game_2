@@ -12,11 +12,13 @@ namespace GuessingAnimal2
 {
     public partial class QuestionAttributeForm : Form
     {
-        private const string LABEL_FORMAT = "Por acaso o animal {0}?";
+        private const string LABEL_FORMAT = "Does the animal {0}?";
 
         public QuestionAttributeForm()
         {
             InitializeComponent();
+            var x = string.Format(LABEL_FORMAT, Singleton.GameMechanics.GetValue);
+            labelQuestion.Text = x;
         }
 
         private void yes_Click(object sender, EventArgs e)
@@ -26,14 +28,12 @@ namespace GuessingAnimal2
             if (Singleton.GameMechanics.IsAnimal)
             {
                 var questionAnimalForm = new QuestionAnimalForm();
-                questionAnimalForm.SetAnimalName(Singleton.GameMechanics.GetData);
                 questionAnimalForm.Show();
                 Close();
             }
             else
             {
                 var questionAttributeForm = new QuestionAttributeForm();
-                questionAttributeForm.SetAnimalAttribute(Singleton.GameMechanics.GetData);
                 questionAttributeForm.Show();
                 Close();
             }
@@ -46,22 +46,15 @@ namespace GuessingAnimal2
             if (Singleton.GameMechanics.IsAnimal)
             {
                 var questionAnimalForm = new QuestionAnimalForm();
-                questionAnimalForm.SetAnimalName(Singleton.GameMechanics.GetData);
                 questionAnimalForm.Show();
                 Close();
             }
             else
             {
                 var questionAttributeForm = new QuestionAttributeForm();
-                questionAttributeForm.SetAnimalAttribute(Singleton.GameMechanics.GetData);
                 questionAttributeForm.Show();
                 Close();
             }
-        }
-
-        public void SetAnimalAttribute(string attribute)
-        {
-            labelQuestion.Text = string.Format(LABEL_FORMAT, attribute);
         }
     }
 }

@@ -38,9 +38,9 @@
             this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.labelQuestion.Location = new System.Drawing.Point(12, 9);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(530, 38);
+            this.labelQuestion.Size = new System.Drawing.Size(530, 48);
             this.labelQuestion.TabIndex = 2;
-            this.labelQuestion.Text = "Por acaso o animal é ...?";
+            this.labelQuestion.Text = "Through my magic, the animal is ...?";
             this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // yes
@@ -67,6 +67,7 @@
             // 
             // QuestionAnimalForm
             // 
+            this.AcceptButton = this.yes;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 111);

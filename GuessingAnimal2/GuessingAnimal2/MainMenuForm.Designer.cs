@@ -35,13 +35,13 @@
             // 
             // labelMainQuestion
             // 
-            this.labelMainQuestion.AutoSize = true;
+            this.labelMainQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelMainQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMainQuestion.Location = new System.Drawing.Point(156, 24);
             this.labelMainQuestion.Name = "labelMainQuestion";
             this.labelMainQuestion.Size = new System.Drawing.Size(255, 22);
             this.labelMainQuestion.TabIndex = 2;
-            this.labelMainQuestion.Text = "Pense em um animal, pensou?";
+            this.labelMainQuestion.Text = "Did you think of an animal?";
             this.labelMainQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ok
@@ -51,7 +51,7 @@
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(95, 29);
             this.ok.TabIndex = 0;
-            this.ok.Text = "Sim";
+            this.ok.Text = "Yes";
             this.ok.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.ok_Click);
@@ -63,12 +63,13 @@
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(95, 29);
             this.cancel.TabIndex = 1;
-            this.cancel.Text = "Cancelar";
+            this.cancel.Text = "Close";
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // MainMenuForm
             // 
+            this.AcceptButton = this.ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 111);
@@ -83,7 +84,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guessing Animal 2";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

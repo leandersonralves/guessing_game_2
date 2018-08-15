@@ -62,11 +62,12 @@
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(530, 38);
             this.labelQuestion.TabIndex = 2;
-            this.labelQuestion.Text = "O animal ...?";
+            this.labelQuestion.Text = "Does the animal  ...?";
             this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // QuestionAttributeForm
             // 
+            this.AcceptButton = this.yes;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 111);

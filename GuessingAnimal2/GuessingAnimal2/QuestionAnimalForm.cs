@@ -12,18 +12,14 @@ namespace GuessingAnimal2
 {
     public partial class QuestionAnimalForm : Form
     {
-        private const string LABEL_FORMAT = "O animal é um {0}?";
+        private const string LABEL_FORMAT = "Through my magic, the animal is {0}?";
 
         public QuestionAnimalForm()
         {
             InitializeComponent();
+            labelQuestion.Text = string.Format(LABEL_FORMAT, Singleton.GameMechanics.GetValue);
         }
-
-        public void SetAnimalName(string animalName)
-        {
-            labelQuestion.Text = string.Format(LABEL_FORMAT, animalName);
-        }
-
+        
         private void yes_Click(object sender, EventArgs e)
         {
             Singleton.GameMechanics.Restart();

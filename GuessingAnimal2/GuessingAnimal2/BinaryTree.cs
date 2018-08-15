@@ -1,56 +1,130 @@
-﻿namespace System.Collections.Generic
+﻿namespace System.Collections.Generic.Tree.Binary
 {
-    public class NodeTree<T>
+    /// <summary>
+    /// Representa um Nó de uma árvore binária.
+    /// </summary>
+    /// <typeparam name="V">Tipo do Objeto que a árvore conterá.</typeparam>
+    public class Node<V>
     {
-        private T value;
-        public NodeTree<T> Left { get; set; }
-        public NodeTree<T> Right { get; set; }
+        /// <summary>
+        /// Valor atual do nó.
+        /// </summary>
+        public V Value { get; protected set; }
 
-        public NodeTree(T value)
+        private Node<V> left;
+
+        /// <summary>
+        /// Nó da esquerda.
+        /// </summary>
+        public Node<V> Left
         {
-            this.value = value;
+            get { return left; }
+            set { left = value; left.Root = this; }
+        }
+
+        private Node<V> right;
+
+        /// <summary>
+        /// Nó da direita.
+        /// </summary>
+        public Node<V> Right {
+            get { return right; }
+            set { right = value; right.Root = this; }
+        }
+
+        /// <summary>
+        /// Nó pai.
+        /// </summary>
+        public Node<V> Root { get; set; }
+
+        public Node(V value)
+        {
+            this.Value = value;
         }
     }
 
-    public class BinaryTree<T>
+    /// <summary>
+    /// Árvore binária.
+    /// </summary>
+    /// <typeparam name="T">T deve extender Node<V></typeparam>
+    /// <typeparam name="V">Parámetro genérico que o Node implementa.</typeparam>
+    public class Tree<T, V> where T : Node<V>
     {
-        public NodeTree<T> Root { get; private set; }
+        /// <summary>
+        /// Nó Raiz da árvore.
+        /// </summary>
+        private T Root { get; set; }
 
-        public NodeTree<T> CurrentSelected { get; set; }
+        /// <summary>
+        /// Atual selecionado.
+        /// </summary>
+        public T CurrentSelected { get; set; }
 
-        public BinaryTree(NodeTree<T> root)
+        public Tree(T root)
         {
             CurrentSelected = this.Root = root;
         }
 
-        public void AddLeft(NodeTree<T> node)
+        /// <summary>
+        /// Adiciona um Nó à esquerda do atual selecionado.
+        /// </summary>
+        /// <param name="node">Nó à ser selecionado.</param>
+        public void AddLeft(T node)
         {
             CurrentSelected.Left = node;
         }
 
-        public void AddRight(NodeTree<T> node)
+        /// <summary>
+        /// Adiciona um Nó à direita do atual selecionado.
+        /// </summary>
+        /// <param name="node">Nó à ser selecionado.</param>
+        public void AddRight(T node)
         {
             CurrentSelected.Right = node;
         }
 
-        public NodeTree<T> GetLeft()
+        /// <summary>
+        /// Retorna o Nó à esquerda do atual selecionado.
+        /// </summary>
+        /// <returns>Nó da esquerda.</returns>
+        public T GetLeft()
         {
-            return CurrentSelected.Left;
+            return (T)CurrentSelected.Left;
         }
 
-        public NodeTree<T> SelectLeft()
+        /// <summary>
+        /// Selecionado o Nó à esquerda do atual selecionado.
+        /// </summary>
+        /// <returns>Novo Nó selecionado.</returns>
+        public T SelectLeft()
         {
-            return CurrentSelected = CurrentSelected.Left;
+            return CurrentSelected = (T)CurrentSelected.Left;
         }
 
-        public NodeTree<T> GetRight()
+        /// <summary>
+        /// Retorna o Nó à direita do atual selecionado.
+        /// </summary>
+        /// <returns>Nó da direita.</returns>
+        public T GetRight()
         {
-            return CurrentSelected.Left;
+            return (T)CurrentSelected.Left;
         }
 
-        public NodeTree<T> SelectRight()
+        /// <summary>
+        /// Selecionado o Nó à direita do atual selecionado.
+        /// </summary>
+        /// <returns>Novo Nó selecionado.</returns>
+        public T SelectRight()
         {
-            return CurrentSelected = CurrentSelected.Right;
+            return CurrentSelected = (T)CurrentSelected.Right;
+        }
+
+        /// <summary>
+        /// Redefine a atual seleção para o Nó raiz.
+        /// </summary>
+        public void ResetSelect()
+        {
+            CurrentSelected = Root;
         }
     }
 }

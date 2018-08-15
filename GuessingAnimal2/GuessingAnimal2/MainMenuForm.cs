@@ -19,7 +19,7 @@ namespace GuessingAnimal2
 
         private void ok_Click(object sender, EventArgs e)
         {
-            QuestionAnimalForm questionAnimalForm = new QuestionAnimalForm();
+            var questionAnimalForm = new QuestionAttributeForm();
             questionAnimalForm.Show();
             Hide();
         }

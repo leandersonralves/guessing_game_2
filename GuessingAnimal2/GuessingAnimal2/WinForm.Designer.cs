@@ -51,11 +51,12 @@
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(310, 32);
             this.label.TabIndex = 1;
-            this.label.Text = "Eu venci novamente!";
+            this.label.Text = "I Won, again, of course!";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WinForm
             // 
+            this.AcceptButton = this.ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 111);

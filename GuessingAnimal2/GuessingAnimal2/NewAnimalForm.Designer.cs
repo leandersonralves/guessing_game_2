@@ -40,7 +40,7 @@
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(530, 26);
             this.label.TabIndex = 2;
-            this.label.Text = "Qual foi o animal que você pensou?";
+            this.label.Text = "What was the animal you thought?";
             this.label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ok
@@ -64,6 +64,7 @@
             // 
             // NewAnimalForm
             // 
+            this.AcceptButton = this.ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 111);

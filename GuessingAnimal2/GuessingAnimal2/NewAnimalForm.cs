@@ -24,6 +24,7 @@ namespace GuessingAnimal2
             var newAttributeAnimal = new NewAttributeForm();
             newAttributeAnimal.Show();
             Hide();
+            //Evento definido para que apenas quando a próxima janela fechar, seja definido o novo animal e seu atributo.
             newAttributeAnimal.FormClosed += (x, y) =>
             {
                 Singleton.GameMechanics.AddNewAnimal(
@@ -35,7 +36,6 @@ namespace GuessingAnimal2
 
                 var mainMenu = new MainMenuForm();
                 mainMenu.Show();
-                Console.WriteLine(NewAnimalName + " " + newAttributeAnimal.NewAnimalAttribute);
                 Close();
             };
         }
